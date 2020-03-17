@@ -1,13 +1,20 @@
 <template>
-    $END$
+  <div>
+    <pure-inbox-screen :error="error" />
+  </div>
 </template>
 
 <script>
-    export default {
-        name: "InboxScreen"
-    }
+  import PureInboxScreen from './PureInboxScreen';
+  import { mapState } from 'vuex';
+
+  export default {
+    name: 'inbox-screen',
+    components: {
+      PureInboxScreen,
+    },
+    computed: {
+      ...mapState(['error']),
+    },
+  };
 </script>
-
-<style scoped>
-
-</style>
